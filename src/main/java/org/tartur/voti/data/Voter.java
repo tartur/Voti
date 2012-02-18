@@ -1,4 +1,4 @@
-package org.tartur.voti;
+package org.tartur.voti.data;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

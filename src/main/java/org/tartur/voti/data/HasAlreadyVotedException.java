@@ -1,4 +1,4 @@
-package org.tartur.voti;
+package org.tartur.voti.data;
 
 /**
  * This exception is thrown when the voter has already voted. A voter can vote only once.

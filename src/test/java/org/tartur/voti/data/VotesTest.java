@@ -1,4 +1,4 @@
-package org.tartur.voti;
+package org.tartur.voti.data;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.tartur.voti.config.BasicConfiguration;
 
 import java.util.Map;
 
@@ -18,7 +19,7 @@ import static org.fest.assertions.Assertions.assertThat;
  * Time: 22:04
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {UnitTestConfiguration.class})
+@ContextConfiguration(classes = {BasicConfiguration.class})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class VotesTest {
     @Autowired

@@ -1,4 +1,4 @@
-package org.tartur.voti;
+package org.tartur.voti.data;
 
 /**
  * A class that models a Person

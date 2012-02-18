@@ -1,4 +1,4 @@
-package org.tartur.voti;
+package org.tartur.voti.data;
 
 /**
  * Candidate model class

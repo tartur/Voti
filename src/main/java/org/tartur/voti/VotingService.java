@@ -2,6 +2,7 @@ package org.tartur.voti;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.tartur.voti.data.*;
 
 import java.util.Collection;
 

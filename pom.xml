@@ -68,8 +68,8 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>main/src/java</sourceDirectory>
-        <testSourceDirectory>test/src/java</testSourceDirectory>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

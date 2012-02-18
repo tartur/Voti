@@ -1,4 +1,4 @@
-package org.tartur.voti;
+package org.tartur.voti.data;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,6 +7,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.Repeat;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.tartur.voti.config.BasicConfiguration;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
@@ -25,7 +26,7 @@ import static org.fest.assertions.Assertions.assertThat;
  * Time: 00:54
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {UnitTestConfiguration.class})
+@ContextConfiguration(classes = {BasicConfiguration.class})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class VotersTest {
     public static final int NUM_ELEMENTS = 15;
