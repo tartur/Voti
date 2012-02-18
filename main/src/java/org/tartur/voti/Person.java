@@ -10,12 +10,12 @@ package org.tartur.voti;
 public class Person {
     protected final String name;
     protected final String lastName;
-    protected final String nationalId;
+    protected final String id;
 
-    public Person(String name, String lastName, String nationalId) {
+    public Person(String name, String lastName, String id) {
         this.name = name;
         this.lastName = lastName;
-        this.nationalId = nationalId;
+        this.id = id;
     }
 
     public String getName() {
@@ -26,8 +26,8 @@ public class Person {
         return lastName;
     }
 
-    public String getNationalId() {
-        return nationalId;
+    public String getId() {
+        return id;
     }
 
     @Override
@@ -35,11 +35,11 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Candidate candidate = (Candidate) o;
+        Person person = (Person) o;
 
-        if (lastName != null ? !lastName.equals(candidate.lastName) : candidate.lastName != null) return false;
-        if (name != null ? !name.equals(candidate.name) : candidate.name != null) return false;
-        if (nationalId != null ? !nationalId.equals(candidate.nationalId) : candidate.nationalId != null) return false;
+        if (lastName != null ? !lastName.equals(person.lastName) : person.lastName != null) return false;
+        if (name != null ? !name.equals(person.name) : person.name != null) return false;
+        if (id != null ? !id.equals(person.id) : person.id != null) return false;
 
         return true;
     }
@@ -48,7 +48,16 @@ public class Person {
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (nationalId != null ? nationalId.hashCode() : 0);
+        result = 31 * result + (id != null ? id.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "[" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", id='" + id + '\'' +
+                ']';
     }
 }

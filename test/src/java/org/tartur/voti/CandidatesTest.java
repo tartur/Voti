@@ -1,7 +1,11 @@
 package org.tartur.voti;
 
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Repeat;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
@@ -18,16 +22,20 @@ import static org.fest.assertions.Assertions.assertThat;
  * User: user
  * Date: 16/02/12
  * Time: 00:54
- * To change this template use File | Settings | File Templates.
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {UnitTestConfiguration.class})
 public class CandidatesTest {
     public static final int NUM_ELEMENTS = 15;
     private final Candidate TEST_CANDIDATE = new Candidate("Salah", "Testira", "12112121");
+    @Autowired
     private Candidates sut;
+    @Autowired
+    private Candidates second;
 
-    @Before
-    public void setUp() throws Exception {
-        sut = new Candidates();
+    @Test
+    public void candidates_is_a_singleton() throws Exception {
+        assertThat(sut).isSameAs(second);
     }
 
     @Test
@@ -55,6 +63,7 @@ public class CandidatesTest {
     }
 
     @Test
+    @Repeat(5)
     public void register_is_threadsafe() throws Exception {
         ExecutorService service = Executors.newFixedThreadPool(NUM_ELEMENTS);
         Collection<Callable<Void>> registrations = new ArrayDeque<Callable<Void>>(NUM_ELEMENTS);

@@ -1,5 +1,9 @@
 package org.tartur.voti;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Scope;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -11,8 +15,9 @@ import java.util.HashSet;
  * Time: 00:58
  * To change this template use File | Settings | File Templates.
  */
+@Scope("singleton")
 public class Candidates {
-
+    private final Logger logger = LoggerFactory.getLogger(Candidates.class);
     private final Collection<Candidate> candidates;
 
     public Candidates() {
@@ -20,7 +25,9 @@ public class Candidates {
     }
 
     public synchronized void register(Candidate candidate) {
-        candidates.add(candidate);
+        if (candidates.add(candidate)) {
+            logger.info("New candidate registered : {}", candidate);
+        }
     }
 
     public Collection<Candidate> getCandidates() {
@@ -28,6 +35,8 @@ public class Candidates {
     }
 
     public synchronized void unregister(Candidate candidate) {
-        candidates.remove(candidate);
+        if (candidates.remove(candidate)) {
+            logger.info("Candidate {} was unregistered", candidate);
+        }
     }
 }
