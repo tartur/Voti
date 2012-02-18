@@ -4,7 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * An instance of this class is a repository for votes
@@ -29,5 +31,14 @@ public class Votes {
 
     public int voteNumber() {
         return votes.size();
+    }
+
+    public Map<Candidate, Integer> voteResult() {
+        Map<Candidate, Integer> result = new HashMap<Candidate, Integer>();
+        for (Vote v : votes) {
+            Integer last = result.get(v.getCandidate());
+            result.put(v.getCandidate(), last == null ? 1 : last + 1);
+        }
+        return result;
     }
 }

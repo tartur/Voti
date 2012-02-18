@@ -26,4 +26,9 @@ public class UnitTestConfiguration {
     public Votes votes() {
         return new Votes();
     }
+
+    @Bean
+    public VotingService votingService() {
+        return new VotingService();
+    }
 }
