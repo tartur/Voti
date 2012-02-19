@@ -2,7 +2,6 @@ package org.tartur.voti.data;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Scope;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -15,7 +14,6 @@ import java.util.HashSet;
  * Time: 00:58
  * To change this template use File | Settings | File Templates.
  */
-@Scope("singleton")
 public class Candidates {
     private final Logger logger = LoggerFactory.getLogger(Candidates.class);
     private final Collection<Candidate> candidates;

@@ -2,7 +2,6 @@ package org.tartur.voti.data;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Scope;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -14,7 +13,6 @@ import java.util.Map;
  * Date: 18/02/12
  * Time: 21:02
  */
-@Scope("singleton")
 public class Votes {
     private final Logger logger = LoggerFactory.getLogger(Votes.class);
 

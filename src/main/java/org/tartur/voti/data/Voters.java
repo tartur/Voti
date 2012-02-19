@@ -2,7 +2,6 @@ package org.tartur.voti.data;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Scope;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -13,7 +12,6 @@ import java.util.HashSet;
  * Date: 18/02/12
  * Time: 16:30
  */
-@Scope("singleton")
 public class Voters {
     private final Logger logger = LoggerFactory.getLogger(Voters.class);
     private final Collection<Voter> voters = new HashSet<Voter>();
